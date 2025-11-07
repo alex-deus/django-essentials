@@ -22,9 +22,9 @@ bump:  ## Update version at setup.py
 	if [ -z "$$VERSION" ]; then \
 		@echo "To use: make bump v=1.2.3"; \
 		exit 1; \
-	fi; \
-	sed -i.bak -E "s/^(__version__ *= *[\"']).*([\"'])/\1$$VERSION\2/" setup.py && rm -f setup.py.bak
-	sed -i.bak -E "s/^(version *= *[\"]).*([\"])/\1$$VERSION\2/" pyproject.toml && rm -f pyproject.toml.bak
+	fi;
+	@sed -i.bak -E "s/^(__version__ *= *[\"']).*([\"'])/\1$$VERSION\2/" setup.py && rm -f setup.py.bak
+	@sed -i.bak -E "s/^(version *= *[\"]).*([\"])/\1$$VERSION\2/" pyproject.toml && rm -f pyproject.toml.bak
 
 build:  ## Build package
 	@python -m build
