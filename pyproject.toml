@@ -53,9 +53,6 @@ autoflake = "^2.2.1"
 bandit = "^1.7.6"
 twine = "^6.2.0"
 
-#[tool.setuptools]
-#packages = ["django-essentials-kit"]
-
 [tool.black]
 line-length = 120
 target-version = ['py38']
