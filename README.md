@@ -50,6 +50,30 @@ if obj:
     ...  # Do something with obj
 ```
 
+### JSON Logger Formatter
+
+Add to `settings.py`:
+```python
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": True,
+    "root": {"level": "INFO", "handlers": ["console"]},
+    "formatters": {
+        "json": {
+            "format": "[%(levelname)s][%(asctime)s] %(module)s.%(funcName)s:%(lineno)d: %(message)s",
+            "()": "django_essentials_kit.logger_formatter.JSONFormatter",
+        },
+    },
+    "handlers": {
+        "console": {"level": "INFO", "class": "logging.StreamHandler", "formatter": "json"},
+    },
+    "loggers": {
+        "django": {"level": "DEBUG", "handlers": ["console"], "propagate": False},
+        # ...
+    },
+}
+```
+
 ## Requirements
 
 - Python 3.8+
