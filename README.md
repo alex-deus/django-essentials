@@ -74,6 +74,26 @@ LOGGING = {
 }
 ```
 
+### Logging HTTP request-response
+
+Add to `settings.py`:
+```python
+MIDDLEWARE = [
+    "django_essentials_kit.middlewares.DjangoLoggingMiddleware",
+    # ...
+]
+```
+
+It will be added to the logs:
+- **real_client_ip** if it is routable
+- **is_succeeded** (200 <= status < 300 - true else false)
+- request details:
+  - **status_code**
+  - **method**
+  - **path**
+- **user_id** if a user is signed in
+- **real_client_ip** (if routable)
+
 ## Requirements
 
 - Python 3.8+
