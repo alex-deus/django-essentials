@@ -18,7 +18,7 @@ jobs:
           git fetch origin develop
           git merge-base --is-ancestor $GITHUB_SHA origin/develop
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -42,3 +42,7 @@ jobs:
 
       - name: Upload to PyPI
         run: twine upload --verbose dist/*
+
+      - name: Remove ~/.pypirc if exists
+        if: always()
+        run: "[ -f ~/.pypirc ] && rm ~/.pypirc"
