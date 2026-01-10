@@ -726,6 +726,17 @@ test = ["async-timeout ; python_version < \"3.11\"", "pytest", "pytest-asyncio (
 trio = ["trio"]
 
 [[package]]
+name = "json-log-formatter"
+version = "1.1.1"
+description = "JSON log formatter"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "json_log_formatter-1.1.1.tar.gz", hash = "sha256:0815e3b4469e5c79cf3f6dc8a0613ba6601f4a7464f85ba03655cfa6e3e17d10"},
+]
+
+[[package]]
 name = "keyring"
 version = "25.6.0"
 description = "Store and access your passwords safely."
@@ -1338,4 +1349,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "46dc9a9b77eff5f8f3a9d03efaead66544f0dad3e12adac5f5917c6a3f30259f"
+content-hash = "ff9c22c9060f36be4d0ea2d95e4db19cf6cb3291f710d3ecdf75206f19cea6e9"
